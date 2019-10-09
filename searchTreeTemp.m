@@ -11,10 +11,10 @@ function [ nextBoard, value ] = searchTreeTemp(board, turn, agentTurn)
     [ r c l ] = size(children);
     valuesList = zeros(1, l);
     for i=1:l
-        if turn == 2
-            nextTurn = 1;
-        else
+        if turn == 3
             nextTurn = 2;
+        else
+            nextTurn = 3;
         end
         
         [ bestBoard, resultValue ] = searchTreeTemp( children(:, :, i), nextTurn, agentTurn );
